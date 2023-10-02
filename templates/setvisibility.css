@@ -15,7 +15,8 @@ body{
     background-color: white;
 }
 h2{
-    margin: 25px 75px 40px 15px;
+    margin: 0px;
+    padding: 0px;
 }
 b {
     font-size: 24px;
@@ -24,9 +25,8 @@ b {
 #ct1,#ct2,#ct3{
     display: none;
 }
-.form{
-    display: flex;
-    align-items: center;
+.sel{
+    padding-left: 0px;
 }
 .check{
     float: right;
@@ -39,6 +39,8 @@ b {
     background-color: white;
 }
 .toggle1{
+    padding-top: 5px;
+    padding-left: 1px;
     margin: 25px 4px 5px 0px;
     width: 60px;
     height: 50px;
@@ -150,4 +152,5 @@ input:checked +.toggle3::before{
 .filter-btn{
     display: flex;
     align-items: center;
+    padding: 10px;
 }
