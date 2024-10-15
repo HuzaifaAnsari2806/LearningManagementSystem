@@ -1,21 +1,39 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const videoSchema = mongoose.Schema({
     unitId: {
+        required: true,
         type: mongoose.SchemaTypes.ObjectId,
-        ref:'Unit'
+        ref: "Unit",
     },
-    title:{
+    title: {
         type: String,
-        required:true,
-        unique:true
+        required: true,
+        unique: true,
     },
     description: {
-        type: String
+        type: String,
     },
-    sequence:{
-        type:Number
-    }
-})
+    url: {
+        type: String,
+        required: true,
+    },
+    sequence: {
+        type: Number,
+    },
+    youtubeId: {
+        type: String,
+    },
+    duration: {
+        hours: {
+            type: Number,
+            default: 0
+        },
+        minutes: {
+            type: Number,
+            default: 0
+        }
+    },
+});
 
-module.exports = mongoose.model("Video",videoSchema)
+module.exports = mongoose.model("Video", videoSchema);

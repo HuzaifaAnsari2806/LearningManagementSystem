@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './AdminCourseList.css';
+import StudentFilter from '../../components/popups/StudentFilter';
 
 function AdminCourseList() {
+    const dbJson = import.meta.env.VITE_BACKEND;
+    const [courses, setCourses] = useState([])
+    const getCourseList=()=>{
+        fetch(`${dbJson}/Admin_course_list`)
+        .then(response=>response.json())
+        .then(data=>setCourses(data))
+        .catch(e=>console.log(e))
+        console.log(courses)
+    }
+
+    useEffect(()=>{
+        getCourseList();
+    },[])
     return (
         <div className="main_module">
-            <p className="heading">Course List</p>
+            <h3 className="list-heading">Course List</h3>
 
             <div className="sub_heading">
-                <input type="text" value="" placeholder="Search Courses" />
-
-                <input type="button" className="filter1" value="Filter >" />
+                <input type="text" placeholder="Search Courses" />
+                
+                {/* <StudentFilter /> */}
+                <button class="filterBtn">Filter</button>
             </div>
 
-            <div className="module2">
-                <p className="heading1">Courses</p>
-            </div>
+            
+            <h4>Courses</h4>
+            
 
-            <div className="module5">
+            <div className="listTableContainer">
                 <table>
                     <thead>
                         <tr>
@@ -26,82 +41,33 @@ function AdminCourseList() {
                             <th>Total Enrollments</th>
                             <th>Total No of Students<br />Completed</th>
                             <th>Set<br />Visibility</th>
-                            <th>View</th>
+                            {/* <th>View</th> */}
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {
+                            courses.map((record,key)=>{
+                                return(
+                                    <tr key={key}>
                             <td>
                                 <div className="course-info">
-                                    <img src="./images/Rectangle 310.png" alt="Course Image" />
-                                    React JS
-                                </div>
+                                    {record.title}
+                                     </div>
                             </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
+                            <td>{record.teacher}</td>
+                            <td>{record.date}</td>
+                            <td>{record.enrolledStudents}</td>
+                            <td>{record.completedStudents}</td>
                             <td>
                                 <button>Set</button>
                             </td>
-                            <td>
+                            {/* <td>
                                 <button>View</button>
-                            </td>
+                            </td> */}
                         </tr>
-                        <tr>
-                            <td>
-                                <div className="course-info">
-                                    <img src="./images/Rectangle 310.png" alt="Course Image" />
-                                    React JS
-                                </div>
-                            </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>
-                                <button>Set</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="course-info">
-                                    <img src="./images/Rectangle 310.png" alt="Course Image" />
-                                    React JS
-                                </div>
-                            </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>
-                                <button>Set</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="course-info">
-                                    <img src="./images/Rectangle 233.png" alt="Course Image" />
-                                    React JS
-                                </div>
-                            </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>
-                                <button>Set</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                        </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </table>
             </div>

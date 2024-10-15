@@ -1,0 +1,170 @@
+.sectionBody {
+    margin-bottom: 30px;
+}
+
+.sectionHeading {
+    margin-bottom: 10px;
+}
+
+.sectionBox {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--secondary30);
+    margin-bottom: 20px;
+}
+
+.textbox {
+    display: flex;
+    margin-bottom: 5px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.textbox h5 {
+    color: var(--text80);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.textbox p {
+    color: var(--text);
+    margin-left: 10px;
+}
+.textbox a{
+    font-size: 20px;
+    line-height: 29.124px;
+    /* 145.62% */
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+}
+.textbox img,.textbox iframe{
+    height: 100px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.editBtn{
+    padding: 10px ;
+    background: var(--secondary70);
+    border: 0;
+    border-radius: 5px;
+    color: var(--text);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: 0.4s transform,0.4s background-color;
+    display: flex;
+    gap: 1px;
+}
+.editBtn svg{
+    width: 20px;
+    height: 20px;
+}
+.editBtn svg path{
+    fill: var(--text);
+}
+.editBtn:focus{
+    outline: 1px solid rgb(127, 127, 127);
+}
+.editBtn:hover{
+    transform: scale(1.05);
+    background-color:var(--accent);
+    /* color: var(--text); */
+}
+.mybutton{
+    min-width: 250px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0;
+    transition: 0.4s transform,0.4s border,0.4s color;;
+}
+.mybutton:hover{
+    transform: scale(0.98);
+    
+}
+
+.dashedBtn{
+    background-color: var(--accent10);
+    border: 1px solid var(--accent);
+    color: var(--text);
+}
+.dashedBtn:hover{
+    background-color: var(--accent30);
+}
+.mr20{
+    margin-right: 20px;
+}
+
+.filledBtn{
+    background: var(--secondary);
+    color: var(--text);
+}
+
+.mybutton.full{
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.sectionBtns{
+    display: flex;
+    gap: 10px;
+}
+
+.deleteBtn svg{
+    margin-right: 3px;
+}
+.deleteBtn svg path{
+    transition: 0.4s fill;
+}
+.deleteBtn:hover, .deleteBtn:hover svg path{
+    color: white;
+    fill: white;
+    background-color: rgb(255, 0, 0);
+}
+
+.sectionBox .ul{
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    list-style-type: none;
+    font-size: 20px;
+    line-height: 29.124px;
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+}
+.sectionBox .ul li{
+    border-radius: 20px;
+    background: var(--accent);
+    padding: 5px 15px;
+    color: var(--text);
+}
+
+@media (max-width:670px) {
+    .mybutton{
+        width: 100%;
+        min-width: 0;
+        padding: 15px;
+    }
+    .mr20{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .popUpBtnFix{
+        width: 100%;   
+    }
+}
+
+@media (max-width:450px) {
+    .textbox h3,.textbox p {
+        font-size: 16px;
+    }
+    
+    .textbox a {
+        font-size: 12px;
+    }
+
+    
+}

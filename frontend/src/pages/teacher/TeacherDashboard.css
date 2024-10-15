@@ -1,0 +1,124 @@
+.Studentinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}
+.perimg {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 30px;
+}
+.student-head {
+    background-color: var(--secondary15);
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+    gap: 10px;
+}
+.student-head .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#main-text {
+    color: #868181;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    /* 291.24% */
+    /* margin-top: 15px; */
+}
+#num{
+    font-size: 18px;
+}
+
+.CourseTable table {
+    width: 100%;
+    background-color: var(--secondary25);
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.CourseTable th {
+    padding: 10px;
+    width: 20%;
+    color: var(--text);
+    background-color: var(--secondary);
+    font-size: 18px;
+    font-weight: 300;
+    /* 161.8% */
+}
+
+.CourseTable td {
+    padding: 10px;
+    text-align: center;
+    border-left: 1px solid var(--accent20);
+}
+.CourseTable h3{
+    margin-bottom: 20px;
+}
+.Topcontent {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    min-height: 300px;
+}
+
+.graph {
+    display: flex;
+    align-items: center;
+    max-height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.25);
+}
+
+.graph img {
+    height: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .Topcontent {
+        display: block;
+        margin: 0%;
+        margin-bottom: 40px;
+    }
+    .Studentinfo{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+
+    .student-head {
+        width: 100%;
+    }
+
+    .graph {
+        padding: 0;
+        margin-top: 20px;
+        width: 100%;
+        height: 300px;
+    }
+    .graph img {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+
+    .CourseTable th {
+        font-size: 14px;
+    }
+    .CourseTable td {
+        font-size: 12px;
+        text-align: center;
+    }
+}
